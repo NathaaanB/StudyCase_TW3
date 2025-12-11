@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "studycase-tw3": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/StudyCase_TW3/dist/index.js"
+      ]
+    }
+  }
+}
