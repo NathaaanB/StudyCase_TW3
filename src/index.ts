@@ -96,8 +96,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     case "echo": {
       const message = args?.message as string;
-      if (!message) {
-        throw new Error("Message is required");
+      if (typeof message !== "string") {
+        throw new Error("Message is required and must be a string");
       }
       return {
         content: [

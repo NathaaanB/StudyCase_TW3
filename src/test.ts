@@ -106,6 +106,21 @@ setTimeout(() => {
     });
   }, 3000);
 
+  // Test 4b: Call echo tool with empty string
+  setTimeout(() => {
+    sendRequest({
+      jsonrpc: '2.0',
+      id: '4b',
+      method: 'tools/call',
+      params: {
+        name: 'echo',
+        arguments: {
+          message: '',
+        },
+      },
+    });
+  }, 3500);
+
   // Test 5: Call calculate tool
   setTimeout(() => {
     sendRequest({
@@ -121,14 +136,14 @@ setTimeout(() => {
         },
       },
     });
-  }, 4000);
+  }, 4500);
 
   // Close after all tests
   setTimeout(() => {
     console.log('\nAll tests completed. Closing server...');
     server.kill();
     process.exit(0);
-  }, 5500);
+  }, 6000);
 }, 500);
 
 // Handle cleanup on exit
