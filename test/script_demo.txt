@@ -1,0 +1,1 @@
+Rends toi sur le site http://books.toscrape.com/ et prends une capture d'écran. Ensuite je veux que tu récupères tous les liens de la page et que tu te rendes sur le premier lien externe. Fais une seconde capture d'écran complète de cette page.

@@ -1,1 +1,6 @@
 __pycache__/
+screenshots/
+.env
+agent_ia.py 
+agent_mcp.py 
+.vscode/

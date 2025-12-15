@@ -1,0 +1,31 @@
+{
+  "url": "http://books.toscrape.com/",
+  "schema": {
+    "produits": [
+      {
+        "nom": "string",
+        "prix": "number",
+        "description": "string",
+        "image_url": "string",
+        "disponibilite": "boolean",
+        "reviews_nb":"number",
+        "specifications": {
+          "rating": "string",
+          "stock": "string"
+        }
+      }
+    ],
+    "metadata": {
+      "date_extraction": "datetime",
+      "nb_resultats": "number"
+    }
+  },
+  "interactions": [
+    {"type": "wait", "duration": 1000}
+  ],
+  "options": {
+    "pagination": true,
+    "max_pages": 2,
+    "retry_failed": true
+  }
+}
