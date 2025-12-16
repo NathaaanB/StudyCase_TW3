@@ -1,12 +1,5 @@
-"""
-prompts_autonomous_scraper.py
-
-Simplified prompt system for autonomous web scraping agent.
-"""
-
 import json
 from typing import Dict, Any
-
 
 def get_autonomous_scraper_system_prompt(schema: Dict[str, Any], url: str) -> str:
     """

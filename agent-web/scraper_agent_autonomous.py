@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
-scraper_agent_autonomous.py
-
-Fully autonomous web scraping agent using MCP architecture.
-The LLM has COMPLETE control - NO hardcoded workflow, NO fallbacks.
-
-Architecture:
-- LiteLLM: Multi-model support (OpenAI, Gemini, Claude, OpenRouter)
-- MCP Integration: Dynamic tool discovery from MCP_server.py
-- Pure LLM Orchestration: Agent decides ALL steps autonomously
-- External Prompts: prompts_autonomous_scraper.py for easy customization
-- Zero Hardcoded Logic: No predefined workflow, no fallback selectors
-
-The LLM analyzes the target schema, devises a complete strategy,
-uses MCP tools to navigate/extract/click, and adapts to obstacles.
-
-Usage:
-    python scraper_agent_autonomous.py --config schema.json --output results.json
-"""
-
 import asyncio
 import json
 import sys
