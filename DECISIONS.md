@@ -21,7 +21,7 @@ Documentation des choix architecturaux et techniques du serveur MCP de web scrap
 - Latence supérieure pour communication locale
 - Non standard pour intégration LLM
 
-### 1.2 Structure Modulaire
+### 1.2 Structure
 
 ```
 mcp_server/
@@ -82,7 +82,7 @@ mcp_server/
 
 ## 3. Gestion du Cycle de Vie du Browser
 
-### 3.1 Initialisation Lazy (Démarrage à la Demande)
+### 3.1 Initialisation Lazy
 
 **Choix :** Le browser Playwright n'est démarré que lors du premier appel à un outil web
 
@@ -121,25 +121,10 @@ async def _ensure_browser(self):
 
 **Trade-off assumé :** Pas d'isolation entre requêtes (acceptable pour usage mono-client)
 
-### 3.4 Cleanup Garanti
-
-**Choix :** Fermeture browser dans `finally` block de `run()`
-
-```python
-try:
-    async with stdio_server() as (read_stream, write_stream):
-        await self.app.run(...)
-finally:
-    await self.cleanup()
-```
-
-**Justification :** Évite les processus zombies Chromium même en cas d'erreur
-
----
 
 ## 4. Catalogue d'Outils
 
-### 4.1 Outils Web (Playwright-based)
+### 4.1 Outils Web
 
 | Outil | Description | Justification du choix |
 |-------|-------------|------------------------|
@@ -152,7 +137,7 @@ finally:
 
 **Choix CSS selectors** : Standard web, précis, supporté par Playwright et LLM
 
-### 4.2 Outils de Scraping (LLM-assisted)
+### 4.2 Outils de Scraping
 
 | Outil | Description | Innovation |
 |-------|-------------|------------|
