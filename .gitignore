@@ -1,7 +1,8 @@
 __pycache__/
 .env
 agent_ia.py 
-agent_mcp.py 
+agent_mcp.py
+agent-web/ 
 .vscode/
 MCP_test/
 MCP-server/
