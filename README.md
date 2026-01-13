@@ -12,5 +12,5 @@ Le premier fichier est le code qui permet de faire des requêtes à un LLM et qu
 Le dossier test comptend un prompt utilisé avec le serveur MCP et le dossier screenshot contient les 2 screenshots effectués.
 
 - ## Test agent IA
-Le fichier 'schema_books_toscrape.json' contient une requête type que l'on peut demander à l'agent IA. L'agent ia peut être appelé avec "python scraper_agent_autonomous.py --config schema_books_toscrape.json --output results.json"
+Le fichier 'schema_books_toscrape.json' contient une requête type que l'on peut demander à l'agent IA. L'agent peut être appelé avec "python web_agent/scraper_agent_autonomous.py --config web_agent/schema_books_toscrape.json --output results.json"
 

@@ -92,7 +92,7 @@ async def initialize_mcp_servers(server_module: str = "mcp_server.server"):
         # Create session
         session_context = ClientSession(read_stream, write_stream)
         session = await session_context.__aenter__()
-        
+            
         # Store contexts for cleanup
         _mcp_contexts["web_automation"] = (client_context, session_context)
         _mcp_sessions["web_automation"] = session
