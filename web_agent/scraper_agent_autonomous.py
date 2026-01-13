@@ -61,15 +61,6 @@ _full_html_cache = ""
 
 
 async def initialize_mcp_servers(server_module: str = "mcp_server.server"):
-    """
-    Initialize MCP web automation server and discover tools.
-    
-    Args:
-        server_module: Python module path to MCP server (e.g. 'mcp_server.server')
-        
-    Returns:
-        List of available tools in OpenAI format
-    """
     global _mcp_sessions, _mcp_contexts, _mcp_tools_cache
     
     if _mcp_sessions and _mcp_tools_cache:
@@ -92,7 +83,7 @@ async def initialize_mcp_servers(server_module: str = "mcp_server.server"):
         # Create session
         session_context = ClientSession(read_stream, write_stream)
         session = await session_context.__aenter__()
-            
+
         # Store contexts for cleanup
         _mcp_contexts["web_automation"] = (client_context, session_context)
         _mcp_sessions["web_automation"] = session
@@ -133,16 +124,6 @@ async def initialize_mcp_servers(server_module: str = "mcp_server.server"):
 
 
 async def execute_mcp_tool(tool_name: str, arguments: Dict[str, Any]) -> Any:
-    """
-    Execute an MCP tool.
-    
-    Args:
-        tool_name: Tool to execute
-        arguments: Tool arguments
-        
-    Returns:
-        Tool execution result
-    """
     session = _mcp_sessions.get("web_automation")
     if not session:
         raise RuntimeError("MCP session not initialized")
@@ -170,7 +151,6 @@ async def execute_mcp_tool(tool_name: str, arguments: Dict[str, Any]) -> Any:
 
 
 async def cleanup_mcp_sessions():
-    """Cleanup MCP sessions."""
     global _mcp_sessions, _mcp_contexts, _mcp_tools_cache
     
     from contextlib import suppress
