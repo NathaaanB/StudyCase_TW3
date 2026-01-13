@@ -92,6 +92,10 @@ WORKFLOW:
 
 Start by navigating to the target URL."""
 
+#######
+# Never used but could be useful and make the prompts more modular in the future
+#######
+
 
 def get_html_analysis_prompt(html_content: str, schema: Dict[str, Any]) -> str:
     """
